@@ -11,6 +11,7 @@ module.exports = {
    * @default 'dist'
    */
   outDir: 'dist',
+  assetsDir:'assets',
   base: './'
   // 反向代理
 }
