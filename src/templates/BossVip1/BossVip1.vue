@@ -3,13 +3,13 @@
     <div class="top-block">
       <img src="./imgs/avatar.jpg" class="avatar" />
       <div class="info-block">
-        <div class="info-line name">大帅逼</div>
+        <div class="info-line name">{{userInfo.name}}</div>
         <div class="info-line">
-          男 | 3990-09 | 成都 | 西南装逼大学 | 统招本科
+          {{userInfo.gender}} | {{userInfo.address}} | {{userInfo.birth}} | {{userInfo.school}} 
         </div>
-        <div class="info-line">Tel: 17666666666 | Email: example@gmail.com</div>
+        <div class="info-line">Tel:  {{userInfo.tel}}  | Email: {{userInfo.email}}</div>
         <div class="info-line">
-          在职-考虑机会 | 工作经验：30年经验 | 全栈 | 期望薪资：15-20W
+          工作状态: {{userInfo.status}} | 工作经验：{{userInfo.exp}} | 求职意向: {{userInfo.target}} | 期望薪资：{{userInfo.salary}}
         </div>
       </div>
     </div>
@@ -28,12 +28,12 @@
 <script>
 export default {
     name: "BossVip1",
-//   props: {
-//     userInfo: {
-//       type: Object,
-//       default: {},
-//     },
-//   },
+  props: {
+    userInfo: {
+      type: Object,
+      default: {},
+    },
+  },
   data(){
       return {
 
@@ -85,6 +85,8 @@ export default {
   font-weight: 700;
   color: #ffdfa1;
   line-height: 30px;
+  min-height: 30px;
+
 }
 
 .bottom-block {

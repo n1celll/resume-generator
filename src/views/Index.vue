@@ -10,6 +10,8 @@
 <script>
 import Introduce from '../components/Introduce.vue'
 import TemplatePreview from '../components/TemplatePreview.vue'
+import { userInfo } from "../store/shared";
+
 export default {
     components : {
         Introduce,
@@ -21,6 +23,7 @@ export default {
     }),
     mounted(){
         this.show = true
+        console.log(userInfo)
     }
 }
 </script>

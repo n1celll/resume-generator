@@ -4,9 +4,11 @@
       <TemplatePreview />
 
       <div class="main-blcok">
-        <div>个人信息</div>
+        <div>
+          <el-input v-model="userInfo.name"></el-input>
+        </div>
         <div class="resume-preview">
-          <BossVip1 />
+          <BossVip1 :userInfo="userInfo" />
         </div>
       </div>
     </div>
@@ -16,6 +18,7 @@
 <script>
 import TemplatePreview from "../components/TemplatePreview.vue";
 import BossVip1 from "../templates//BossVip1/BossVip1.vue";
+import { userInfo } from "../store/shared";
 
 export default {
   name: "Main",
@@ -26,10 +29,38 @@ export default {
   data() {
     return {
       show: false,
+      val: "",
+      val1: "",
+      userInfo: userInfo
     };
   },
   mounted() {
     this.show = true;
+  },
+  methods: {
+    debounce(fn, delay) {
+      clearTimeout(fn.timer);
+      fn.timer = setTimeout(() => {
+        fn();
+      }, delay);
+    },
+
+    throttle(fn, delay) {
+      let now = new Date().getTime();
+
+      if (now - fn.lastTime < delay) {
+        return;
+      }
+      setTimeout(fn, delay);
+      fn.lastTime = now;
+    },
+
+    onInput() {
+      console.log(this.val);
+    },
+    onInput1() {
+      console.log(this.val1);
+    },
   },
 };
 </script>
@@ -40,9 +71,16 @@ export default {
   justify-content: space-around;
 }
 
-.resume-preview{
+.resume-preview {
   width: 600px;
-    box-shadow: 0 8px 20px 2px rgb(0 0 0 / 8%);
+  box-shadow: 0 8px 20px 2px rgb(0 0 0 / 8%);
   box-sizing: border-box;
+}
+
+.test1{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: chartreuse;
 }
 </style>
