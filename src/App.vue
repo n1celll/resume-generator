@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <Header v-if="$route.name != 'Preview'" />
     <router-view />
   </div>
 
@@ -13,6 +13,9 @@ export default {
   name: 'App',
   components: {
     Header
+  },
+  created(){
+    console.log(this.$route)
   }
 }
 </script>

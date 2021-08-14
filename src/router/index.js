@@ -14,7 +14,12 @@ const routerHistorys = createWebHashHistory()
         path: '/main', 
         name: "Main",
         component: ()=>import('../views/Main.vue')
-      }
+      },
+      {
+        path: '/preview', 
+        name: "Preview",
+        component: ()=>import('../views/Preview.vue')
+      },
     ]
   })
  

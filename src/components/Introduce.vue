@@ -25,6 +25,9 @@ export default {
 .container{
   padding-top: 70px;
   padding-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
   h1 {
     text-align: center;
