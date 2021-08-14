@@ -79,7 +79,7 @@ export default {
 }
 
 .top-block {
-  background-image: url("./imgs/r-header.png");
+  background-image: url("/src/templates/BossVip1/imgs/r-header.png");
   width: 100%;
   height: 210px;
   display: flex;
