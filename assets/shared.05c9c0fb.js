@@ -1,0 +1,1 @@
+import{h as e}from"./index.e5cf125c.js";let a=JSON.parse(localStorage.getItem("userInfo"));a||(a={avatar:"/src/templates/BossVip1/imgs/avatar.jpg",name:"姓名",gender:"xx",address:"北京",birth:"1970-01-01",school:"xxxxx学校",tel:"13*********",email:"example@163.com",status:"离职",exp:"xx年",target:"C++",salary:"50K",jobs:[{}],projects:[{}]});const s=e(a);export{s as u};
